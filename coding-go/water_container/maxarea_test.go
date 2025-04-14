@@ -32,6 +32,13 @@ func Test_maxArea(t *testing.T) {
 			},
 			want: 0,
 		},
+		{
+			name: "water blocked",
+			args: args{
+				height: []int{1, 2, 1},
+			},
+			want: 2,
+		},
 	}
 	for _, tt := range tests {
 		t.Run(tt.name, func(t *testing.T) {
