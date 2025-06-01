@@ -1,5 +1,8 @@
 package trie
 
+/**
+https://leetcode.com/problems/implement-trie-prefix-tree/description/?envType=study-plan-v2&envId=top-interview-150
+**/
 type Node struct {
 	nextMap map[rune]*Node
 	letter  rune
