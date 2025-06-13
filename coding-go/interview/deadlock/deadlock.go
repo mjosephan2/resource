@@ -30,13 +30,17 @@ func FindDeadlock(graph [][]string) bool {
 			recStack[node] = true
 
 			for _, neighbor := range getNeighbors(graph, node) {
+				// If the neighbor has not been visited, do dfs for the neighbor
+				// If dfs return true, means there is a cycle
 				if !visited[neighbor] && dfs(neighbor) {
 					return true
 				} else if recStack[neighbor] {
+					// Already in the recursive stack, means there is a cycle
 					return true
 				}
 			}
 		}
+		// remove the node from recursive stack
 		recStack[node] = false
 		return false
 	}
