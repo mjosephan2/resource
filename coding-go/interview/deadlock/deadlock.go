@@ -22,7 +22,6 @@ package deadlock
 func FindDeadlock(graph [][]string) bool {
 	visited := make(map[string]bool)
 	recStack := make(map[string]bool)
-	fmt.Println("Graph:", graph)
 	var dfs func(string) bool
 	dfs = func(node string) bool {
 		if !visited[node] {
